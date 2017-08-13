@@ -4,4 +4,5 @@ public class ResultData {
 
     String name;
     String value;
+    String type;
 }
