@@ -7,6 +7,7 @@ import org.ahea.build.inter.BuildInterface;
 import org.ahea.export.Exporter;
 import org.ahea.export.ExporterDummyMarshaller;
 import org.ahea.export.ExporterFactory;
+import org.ahea.export.ExporterType;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class Command {
 
         Map<String, List<ResultData>> dummyBuildResult = buildDummy(fieldCategoryList, dataLength);
 
-        return exportDummy(ExporterFactory.newInstance(0), ExporterDummyMarshaller.newInstance().marshalling(dummyBuildResult) , option);
+        return exportDummy(ExporterFactory.newInstance(ExporterType.Json), ExporterDummyMarshaller.newInstance().marshalling(dummyBuildResult) , option);
 
     }
 

@@ -5,13 +5,15 @@ import org.ahea.export.json.GsonJsonExporter;
 
 public class ExporterFactory {
 
-    public static Exporter newInstance(int exportType) {
+    public static Exporter newInstance(ExporterType exportType) {
 
-        //todo
-        //exportType을 Enum으로 바꾸자
-        //exportType에 따라 Exporter객체 생성
-
-        return new GsonJsonExporter();
+        try {
+            return (Exporter) exportType.getValue().newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
     }
 }
