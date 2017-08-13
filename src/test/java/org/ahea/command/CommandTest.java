@@ -26,7 +26,7 @@ public class CommandTest {
         Map frontRequestMap = new HashMap();
 
         List<FieldCategory> fieldCategoryList = new ArrayList<>();
-        fieldCategoryList.add(new FieldCategory("name", "name", null, "Repo_1", null));
+        fieldCategoryList.add(new FieldCategory("name", "name", null, "Repo_1" ,"String", null));
 
         frontRequestMap.put("fieldCategoryList", fieldCategoryList);
         frontRequestMap.put("dataLength", 5);
@@ -38,7 +38,7 @@ public class CommandTest {
     public void buildDummy() throws Exception {
 
         List<FieldCategory> fieldCategoryList = new ArrayList<>();
-        fieldCategoryList.add(new FieldCategory("name", "name", null, "Repo_1", null));
+        fieldCategoryList.add(new FieldCategory("name", "name", null, "Repo_1","String", null));
 
         command.buildDummy(fieldCategoryList, 5);
 
@@ -46,7 +46,7 @@ public class CommandTest {
 
     @Test
     public void exportDummy() throws Exception {
-
+        fail("Not yet implemented");
     }
 
 }

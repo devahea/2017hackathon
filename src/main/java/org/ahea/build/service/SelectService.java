@@ -9,7 +9,7 @@ public class SelectService implements GenetateDataInterface {
     @Override
     public String genetateData(FieldCategory fieldCategory) {
         List<String> conditions = fieldCategory.getConditions();
-        Random random = new Random(conditions.size());
-        return conditions.get(random.nextInt());
+        Random random = new Random();
+        return conditions.get(random.nextInt(conditions.size()));
     }
 }
