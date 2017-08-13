@@ -11,8 +11,6 @@ public class FieldData {
     @Id  @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
     String data;
-    @ManyToOne
-    @JoinColumn
-    UUID fieldCategoryId;
+    String fieldCategoryId;
 
 }

@@ -12,10 +12,7 @@ import java.util.UUID;
 @Data
 public class FieldCategory {
     @Id
-    @GenericGenerator(name = "uuid-gen", strategy = "uuid2")
-    @GeneratedValue(generator = "uuid-gen")
-    @org.hibernate.annotations.Type(type="pg-uuid")
-    UUID id;
+    String id;
 
     String name;
     String description;
