@@ -1,4 +1,4 @@
-package org.ahea.build;
+package org.ahea.build.inter;
 
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.build.entity.ResultData;
