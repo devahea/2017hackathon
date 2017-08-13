@@ -14,6 +14,10 @@ public class TypeHandler {
 
             } else if("randem".equals(fieldCategory.getType())){
 
+            } else if("select".equals(fieldCategory.getType())) {
+
+            } else if("date".equals(fieldCategory.getType())){
+
             }
         }
 
