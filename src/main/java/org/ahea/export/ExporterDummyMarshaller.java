@@ -9,7 +9,6 @@ import java.util.Map;
 public class ExporterDummyMarshaller {
 
     private ExporterDummyMarshaller() {
-
     }
 
     public static ExporterDummyMarshaller newInstance() {
@@ -17,6 +16,9 @@ public class ExporterDummyMarshaller {
     }
 
     public List<Map<String, Object>> marshalling(Map<String, List<ResultData>> data) {
+        //todo
+        //marshaller 개발
+
         return null;
     }
 
