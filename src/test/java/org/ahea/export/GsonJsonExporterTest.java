@@ -13,12 +13,12 @@ public class GsonJsonExporterTest {
 
     Exporter gsonJsonExporter = new Exporter() {
         @Override
-        public String export(Map<String, Object>) {
+        public String export(Map<String, Object> data) {
             return null;
         }
 
         @Override
-        public String export(List<Map<String, Object>>) {
+        public String export(List<Map<String, Object>> datas) {
             return null;
         }
     };
