@@ -5,9 +5,15 @@ import org.ahea.export.json.GsonJsonExporter;
 
 public class ExporterFactory {
 
-    public static Exporter newInstance(int exportType) {
+    public static Exporter newInstance(ExporterType exportType) {
 
-        return new GsonJsonExporter();
+        try {
+            return (Exporter) exportType.getValue().newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
     }
 }
