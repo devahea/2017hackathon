@@ -6,8 +6,7 @@ import org.ahea.build.entity.FieldCategory;
 public class RandomService implements GenetateDataInterface {
     @Override
     public String genetateData(FieldCategory fieldCategory) {
-        String regex = fieldCategory.getRegularExpression();
-        Xeger generator = new Xeger(regex);
+        Xeger generator = new Xeger(fieldCategory.getRegularExpression());
         return generator.generate();
     }
 }
