@@ -34,10 +34,14 @@ public class SqlBuilderSqlExporter implements SqlExporter {
             for(String key : data.keySet()){
                 insertQuery.addCustomColumn(key, data.get(key));
             }
-            stringBuilder.append(insertQuery.validate().toString()+"\n");
+            stringBuilder.append(insertQuery.validate().toString()+";\n");
         }
         sqls = stringBuilder.toString();
 
-        return sqls;
+        return this.removeLastNewLine(sqls);
+    }
+
+    private String removeLastNewLine(String s){
+        return s.substring(0, s.length()-1 );
     }
 }

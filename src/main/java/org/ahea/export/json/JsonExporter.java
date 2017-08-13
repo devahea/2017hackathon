@@ -6,5 +6,4 @@ import java.util.List;
 import java.util.Map;
 
 public interface JsonExporter extends Exporter{
-    String parseJson(List<Map<String, Object>> datas);
 }
