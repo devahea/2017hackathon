@@ -1,6 +1,10 @@
 package org.ahea.export;
 
 import lombok.extern.slf4j.Slf4j;
+import org.ahea.export.json.GsonJsonExporter;
+import org.ahea.export.sql.SqlBuilderSqlExporter;
+import org.ahea.export.xml.Dom4JXmlExporter;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,14 +19,14 @@ public class ExporterTypeTest {
 
     @Test
     public void jsonClassCheckTest() {
-
-        log.info("json exporter class {}", ExporterType.Json.getValue());
-
-        log.info("xml exporter class {}", ExporterType.Xml.getValue());
-
-        log.info("query exporter class {}", ExporterType.Query.getValue());
-
-
+        Assert.assertEquals(ExporterType.Json.getValue(), GsonJsonExporter.class);
     }
-
+    @Test
+    public void xmlClassCheckTest() {
+        Assert.assertEquals(ExporterType.Xml.getValue(), Dom4JXmlExporter.class);
+    }
+    @Test
+    public void queryClassCheckTest() {
+        Assert.assertEquals(ExporterType.Query.getValue(), SqlBuilderSqlExporter.class);
+    }
 }

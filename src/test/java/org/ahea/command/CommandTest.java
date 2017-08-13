@@ -46,7 +46,7 @@ public class CommandTest {
 
     @Test
     public void exportDummy() throws Exception {
-
+        fail("Not yet implemented");
     }
 
 }
