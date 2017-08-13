@@ -23,4 +23,16 @@ public class FieldCategory {
 
     @Transient
     List<String> conditions;
+
+    public FieldCategory() {
+
+    }
+
+    public FieldCategory(String name, String description, String regularExpression, String type, List<String> conditions) {
+        this.name = name;
+        this.description = description;
+        this.regularExpression = regularExpression;
+        this.type = type;
+        this.conditions = conditions;
+    }
 }
