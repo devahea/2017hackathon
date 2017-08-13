@@ -8,5 +8,5 @@ import java.util.Map;
 
 public interface BuildInterface {
 
-    public Map<String, List<ResultData>> build(List<FieldCategory> fieldCategoryList, Integer rowNumber);
+    public List<List<ResultData>> build(List<FieldCategory> fieldCategoryList, Integer rowNumber);
 }

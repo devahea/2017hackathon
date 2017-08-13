@@ -10,7 +10,7 @@ import java.util.Map;
 public class BuildController implements BuildInterface{
 
     @Override
-    public Map<String, List<ResultData>> build(List<FieldCategory> fieldCategoryList, Integer rowNumber) {
+    public List<List<ResultData>> build(List<FieldCategory> fieldCategoryList, Integer rowNumber) {
 
         TypeHandler typeHandler = new TypeHandler();
 

@@ -12,8 +12,8 @@ import java.util.Map;
 
 public class TypeHandler {
 
-    public Map<String, List<ResultData>> handle(List<FieldCategory> fieldCategoryList, Integer rowNumber){
-        Map<String, List<ResultData>> result = new HashMap<>();
+    public List<List<ResultData>> handle(List<FieldCategory> fieldCategoryList, Integer rowNumber){
+        List<List<ResultData>> result = new ArrayList<>();
         GenetateDataInterface genetateDataInterface;
 
         for (int i = 0; i < rowNumber; i++){
@@ -32,7 +32,7 @@ public class TypeHandler {
                 // list add domain
                 resultDataes.add(resultData);
             }
-            result.put(Integer.toString(i),resultDataes);
+            result.add(resultDataes);
         }
 
         return result;

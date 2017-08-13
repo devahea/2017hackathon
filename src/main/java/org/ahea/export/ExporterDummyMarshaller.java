@@ -15,7 +15,7 @@ public class ExporterDummyMarshaller {
         return new ExporterDummyMarshaller();
     }
 
-    public List<Map<String, Object>> marshalling(Map<String, List<ResultData>> data) {
+    public List<Map<String, Object>> marshalling(List<List<ResultData>> data) {
         //todo
         //marshaller 개발
 

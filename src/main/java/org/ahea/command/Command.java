@@ -24,13 +24,13 @@ public class Command {
         Integer dataLength = (Integer) params.get("dataLength");
         Map option = (Map) params.get("option");
 
-        Map<String, List<ResultData>> dummyBuildResult = buildDummy(fieldCategoryList, dataLength);
+        List<List<ResultData>> dummyBuildResult = buildDummy(fieldCategoryList, dataLength);
 
         return exportDummy(ExporterFactory.newInstance(ExporterType.Json), ExporterDummyMarshaller.newInstance().marshalling(dummyBuildResult) , option);
 
     }
 
-    public Map<String, List<ResultData>> buildDummy(List<FieldCategory> fieldCategoryList, Integer dataLength) {
+    public List<List<ResultData>> buildDummy(List<FieldCategory> fieldCategoryList, Integer dataLength) {
 
          return buildInterface.build(fieldCategoryList, dataLength);
 
