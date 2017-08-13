@@ -19,4 +19,14 @@ public class RandomUtil {
         df.setRoundingMode(RoundingMode.DOWN);
         return df.format(RANDOM.nextDouble() * Math.pow(10, size));
     }
+
+    public static boolean isStringDouble(String s) {
+        try {
+            Double.parseDouble(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
 }

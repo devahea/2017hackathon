@@ -27,7 +27,7 @@ public class BuildControllerTest {
                 "핸드폰 입니다",
                 "(01[01]{1})-([0-9]{4})-([0-9]{4})",
                 "random",
-                "string",
+                "",
                 null
         );
 
@@ -54,12 +54,22 @@ public class BuildControllerTest {
                 "yyyy-MM-dd HH:mm:ss",
                 "date",
                 "string",
-                conditions
+                null
+        );
+
+        FieldCategory fieldCategory4 = new FieldCategory(
+                "숫자",
+                "숫자 입니다",
+                "[0-9]{2}",
+                "random",
+                "integer",
+                null
         );
 
         fieldCategoryList.add(fieldCategory1);
         fieldCategoryList.add(fieldCategory2);
         fieldCategoryList.add(fieldCategory3);
+        fieldCategoryList.add(fieldCategory4);
 
         BuildController contorller = new BuildController();
         log.debug(contorller.build(fieldCategoryList, 100));
