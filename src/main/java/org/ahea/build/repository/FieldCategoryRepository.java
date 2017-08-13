@@ -1,4 +1,4 @@
-package org.ahea.repository;
+package org.ahea.build.repository;
 
 import org.ahea.build.entity.FieldCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
