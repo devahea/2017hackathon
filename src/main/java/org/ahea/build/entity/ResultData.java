@@ -3,9 +3,8 @@ package org.ahea.build.entity;
 import lombok.Data;
 
 @Data
-public class ResultData {
+public class ResultData<T> {
 
     String name;
-    String value;
-    String type;
+    T value;
 }
