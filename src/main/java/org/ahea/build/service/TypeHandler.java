@@ -17,15 +17,26 @@ public class TypeHandler {
         for (int i = 0; i < rowNumber; i++){
             List<ResultData> resultDataes = new ArrayList<>();
             for (FieldCategory fieldCategory : fieldCategoryList) {
-                if(fieldCategory.getType().startsWith("repo")){
+                ResultData resultData = new ResultData();
+                String value = "";
+                if(fieldCategory.getCategoryType().startsWith("repo")){
 
-                } else if("random".equals(fieldCategory.getType())){
+                } else if("random".equals(fieldCategory.getCategoryType())){
 
-                } else if("select".equals(fieldCategory.getType())) {
+                } else if("select".equals(fieldCategory.getCategoryType())) {
 
-                } else if("date".equals(fieldCategory.getType())){
+                } else if("date".equals(fieldCategory.getCategoryType())){
 
                 }
+
+                resultData.setName(fieldCategory.getFieldName());
+                resultData.setValue(value);
+                resultData.setType(fieldCategory.getDataType());
+
+                //filter insert
+
+                // list add domain
+                resultDataes.add(resultData);
             }
             result.put(Integer.toString(i),resultDataes);
         }

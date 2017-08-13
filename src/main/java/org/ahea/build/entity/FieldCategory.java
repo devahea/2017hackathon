@@ -16,10 +16,11 @@ public class FieldCategory {
     @Id
     String id;
 
-    String name;
+    String fieldName;
     String description;
     String regularExpression;
-    String type;
+    String categoryType;
+    String dataType;
 
     @Transient
     List<String> conditions;
@@ -28,11 +29,12 @@ public class FieldCategory {
 
     }
 
-    public FieldCategory(String name, String description, String regularExpression, String type, List<String> conditions) {
-        this.name = name;
+    public FieldCategory(String fieldName, String description, String regularExpression, String categoryType, String dataType, List<String> conditions) {
+        this.fieldName = fieldName;
         this.description = description;
         this.regularExpression = regularExpression;
-        this.type = type;
+        this.categoryType = categoryType;
+        this.dataType = dataType;
         this.conditions = conditions;
     }
 }
