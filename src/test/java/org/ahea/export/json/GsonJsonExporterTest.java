@@ -1,6 +1,7 @@
-package org.ahea.export;
+package org.ahea.export.json;
 
 import com.google.gson.Gson;
+import org.ahea.export.Exporter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
