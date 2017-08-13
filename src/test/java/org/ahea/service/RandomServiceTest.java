@@ -12,7 +12,7 @@ import java.util.List;
 public class RandomServiceTest {
 
     @Test
-    public void RandomServiceFormatTest(){
+    public void randomServiceTest(){
         RandomService randomService = new RandomService();
         FieldCategory fieldCategory = new FieldCategory();
         fieldCategory.setRegularExpression("(01[01]{1})-([0-9]{4})-([0-9]{4})");
