@@ -1,7 +1,9 @@
 package org.ahea.build.filter;
 
-public class DataFilter {
+import java.util.List;
 
+public interface DataFilter<T> {
 
+    public Boolean filter(T value, List<String> conditions);
 
 }
