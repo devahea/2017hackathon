@@ -12,9 +12,10 @@ import java.util.Random;
 public class DateService implements GenetateDataInterface {
     @Override
     public String genetateData(FieldCategory fieldCategory) {
-        String format = fieldCategory.getConditions().get(0);
+        String format = fieldCategory.getRegularExpression();
         if(format == null){
-            throw new RuntimeException("Date format have to define");
+//            throw new RuntimeException("Date format have to define");
+            format = "yyyy/MM/dd HH:mm:ss";
         }
         Random RANDOM = new SecureRandom();
         Date date = new Date(Math.abs(System.currentTimeMillis()- RANDOM.nextInt()));

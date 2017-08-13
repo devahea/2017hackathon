@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class TypeHandler {
 
-    Map<String, List<ResultData>> handle(List<FieldCategory> fieldCategoryList, Integer rowNumber){
+    public Map<String, List<ResultData>> handle(List<FieldCategory> fieldCategoryList, Integer rowNumber){
         Map<String, List<ResultData>> result = new HashMap<>();
         GenetateDataInterface genetateDataInterface;
 
