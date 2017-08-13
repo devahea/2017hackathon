@@ -18,15 +18,19 @@ public class TypeHandler {
             List<ResultData> resultDataes = new ArrayList<>();
             for (FieldCategory fieldCategory : fieldCategoryList) {
                 ResultData resultData = new ResultData();
+                GenetateDataInterface genetateDataInterface;
                 String value = "";
                 if(fieldCategory.getCategoryType().startsWith("repo")){
 
                 } else if("random".equals(fieldCategory.getCategoryType())){
-
+                    genetateDataInterface = new RandomService();
+                    value = genetateDataInterface.genetateData(fieldCategory);
                 } else if("select".equals(fieldCategory.getCategoryType())) {
-
+                    genetateDataInterface = new SelectService();
+                    value = genetateDataInterface.genetateData(fieldCategory);
                 } else if("date".equals(fieldCategory.getCategoryType())){
-
+                    genetateDataInterface = new DateService();
+                    value = genetateDataInterface.genetateData(fieldCategory);
                 }
 
                 resultData.setName(fieldCategory.getFieldName());
