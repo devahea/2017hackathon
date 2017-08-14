@@ -1,6 +1,7 @@
 package org.ahea.command;
 
 import org.ahea.build.entity.FieldCategory;
+import org.ahea.build.service.CategoryType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,7 +27,7 @@ public class CommandTest {
         Map frontRequestMap = new HashMap();
 
         List<FieldCategory> fieldCategoryList = new ArrayList<>();
-        fieldCategoryList.add(new FieldCategory("name", "name", null, "Repo_1" ,"String", null));
+        fieldCategoryList.add(new FieldCategory("name", "name", null, CategoryType.Repo,"String", null));
 
         frontRequestMap.put("fieldCategoryList", fieldCategoryList);
         frontRequestMap.put("dataLength", 5);
@@ -38,7 +39,7 @@ public class CommandTest {
     public void buildDummy() throws Exception {
 
         List<FieldCategory> fieldCategoryList = new ArrayList<>();
-        fieldCategoryList.add(new FieldCategory("name", "name", null, "Repo_1","String", null));
+        fieldCategoryList.add(new FieldCategory("name", "name", null, CategoryType.Repo,"String", null));
 
         command.buildDummy(fieldCategoryList, 5);
 

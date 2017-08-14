@@ -49,10 +49,10 @@ public class TypeHandler {
                 }
 
                 //filter insert
-                if( filter.filter(value, fieldCategory.getConditions()) ){
-                    fieldIndex--;
-                    continue;
-                }
+//                if( filter.filter(value, fieldCategory.getConditions()) ){
+//                    fieldIndex--;
+//                    continue;
+//                }
 
                 resultData.setName(fieldCategory.getFieldName());
                 resultData.setValue(value);

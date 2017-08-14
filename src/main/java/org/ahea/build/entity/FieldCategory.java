@@ -1,6 +1,7 @@
 package org.ahea.build.entity;
 
 import lombok.Data;
+import org.ahea.build.service.CategoryType;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
@@ -21,7 +22,7 @@ public class FieldCategory {
     String fieldName;
     String description;
     String regularExpression;
-    String categoryType;
+    CategoryType categoryType;
     String dataType;
 
     @Transient
@@ -31,7 +32,7 @@ public class FieldCategory {
 
     }
 
-    public FieldCategory(String fieldName, String description, String regularExpression, String categoryType, String dataType, List<String> conditions) {
+    public FieldCategory(String fieldName, String description, String regularExpression, CategoryType categoryType, String dataType, List<String> conditions) {
         this.fieldName = fieldName;
         this.description = description;
         this.regularExpression = regularExpression;

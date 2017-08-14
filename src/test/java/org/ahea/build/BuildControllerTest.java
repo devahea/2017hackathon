@@ -3,6 +3,7 @@ package org.ahea.build;
 import lombok.extern.apachecommons.CommonsLog;
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.build.inter.BuildController;
+import org.ahea.build.service.CategoryType;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class BuildControllerTest {
                 "핸드폰번호",
                 "핸드폰 입니다",
                 "(01[01]{1})-([0-9]{4})-([0-9]{4})",
-                "random",
+                CategoryType.Random,
                 "",
                 null
         );
@@ -43,7 +44,7 @@ public class BuildControllerTest {
                 "성별",
                 "성별 입니다",
                 "",
-                "select",
+                CategoryType.Select,
                 "string",
                 conditions
         );
@@ -52,7 +53,7 @@ public class BuildControllerTest {
                 "날짜",
                 "날짜 입니다",
                 "yyyy-MM-dd HH:mm:ss",
-                "date",
+                CategoryType.Date,
                 "string",
                 null
         );
@@ -61,7 +62,7 @@ public class BuildControllerTest {
                 "숫자",
                 "숫자 입니다",
                 "[0-9]{2}",
-                "random",
+                CategoryType.Random,
                 "integer",
                 null
         );
