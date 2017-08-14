@@ -2,6 +2,8 @@ package org.ahea.build.inter;
 
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.build.entity.ResultData;
+import org.ahea.build.filter.FilterManager;
+import org.ahea.build.filter.FilterSelect;
 import org.ahea.build.service.TypeHandler;
 
 import java.util.List;

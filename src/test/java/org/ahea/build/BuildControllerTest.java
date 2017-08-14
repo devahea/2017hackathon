@@ -1,14 +1,21 @@
 package org.ahea.build;
 
 import lombok.extern.apachecommons.CommonsLog;
+import lombok.extern.slf4j.Slf4j;
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.build.inter.BuildController;
 import org.ahea.build.service.CategoryType;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
+//@Slf4j
 @CommonsLog
 public class BuildControllerTest {
 
@@ -57,22 +64,39 @@ public class BuildControllerTest {
                 "string",
                 null
         );
+        List<String> conditions2 = new ArrayList<String>();
+        conditions2.add(">,5");
+        conditions2.add("<,9");
 
         FieldCategory fieldCategory4 = new FieldCategory(
                 "숫자",
                 "숫자 입니다",
-                "[0-9]{2}",
+                "[0-9]{1}",
                 CategoryType.Random,
-                "integer",
-                null
+                "",
+                conditions2
         );
 
-        fieldCategoryList.add(fieldCategory1);
-        fieldCategoryList.add(fieldCategory2);
-        fieldCategoryList.add(fieldCategory3);
+        List<String> conditions3 = new ArrayList<String>();
+        conditions3.add("first,김");
+//        conditions3.add("middle,최");
+//        conditions3.add("last,최");
+
+        FieldCategory fieldCategory5 = new FieldCategory(
+                "이름",
+                "이름 입니다",
+                "",
+                CategoryType.Repo,
+                "1",
+                conditions3
+        );
+
+        fieldCategoryList.add(fieldCategory5);
+//        fieldCategoryList.add(fieldCategory2);
+//        fieldCategoryList.add(fieldCategory3);
         fieldCategoryList.add(fieldCategory4);
 
         BuildController contorller = new BuildController();
-        log.debug(contorller.build(fieldCategoryList, 100));
+        log.info(contorller.build(fieldCategoryList, 100) + "");
     }
 }

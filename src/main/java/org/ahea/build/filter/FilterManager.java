@@ -1,21 +1,22 @@
 package org.ahea.build.filter;
 
-import java.util.List;
+import lombok.extern.apachecommons.CommonsLog;
 
+@CommonsLog
 public class FilterManager {
 
     FilterChain filterChain;
 
     public FilterManager() {
         filterChain = new FilterChain();
-//        filterChain.setTarget(target);
     }
 
-    public void setFilter(DataFilter filter) {
+    public void setFilter(Filter filter) {
+        log.debug(filter);
         filterChain.addFilter(filter);
     }
 
-    public void filter(Object value, List<String> conditionList){
-        filterChain.execute(value, conditionList);
+    public Boolean filter(Object value){
+        return filterChain.execute(value);
     }
 }

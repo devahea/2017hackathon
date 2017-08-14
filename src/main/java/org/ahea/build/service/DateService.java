@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Random;
 
 @CommonsLog
-public class DateService implements GenetateDataInterface {
+public class DateService implements GenerateDataInterface {
     @Override
     public String genetateData(FieldCategory fieldCategory) {
         String format = fieldCategory.getRegularExpression();
