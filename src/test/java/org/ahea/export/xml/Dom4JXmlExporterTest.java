@@ -25,8 +25,8 @@ public class Dom4JXmlExporterTest extends BootTest{
         data.put("성별", "남");
 
         Map<String, Object> option = new HashMap();
-        option.put("rootElement", "dataSet");
-        option.put("recordElement","record");
+//        option.put("rootElement", "dataSet");
+//        option.put("recordElement","record");
 
         log.info("Dom4j print test {}", exporter.export(data, option));
 

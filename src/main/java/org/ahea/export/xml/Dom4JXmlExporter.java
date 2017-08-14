@@ -18,6 +18,12 @@ public class Dom4JXmlExporter implements XmlExporter{
         String rootElement = (String) option.get("rootElement");
         String recordElement = (String) option.get("recordElement");
 
+        if(rootElement==null) {
+            rootElement = "root";
+        }
+        if(recordElement==null) {
+            recordElement = "item";
+        }
 
         Document document = DocumentHelper.createDocument();
         Element root = document.addElement( rootElement );
@@ -36,13 +42,21 @@ public class Dom4JXmlExporter implements XmlExporter{
         String rootElement = (String) option.get("rootElement");
         String recordElement = (String) option.get("recordElement");
 
+        if(rootElement==null) {
+            rootElement = "root";
+        }
+        if(recordElement==null) {
+            recordElement = "item";
+        }
 
         Document document = DocumentHelper.createDocument();
         Element root = document.addElement( rootElement );
 
 
+        String finalRecordElement = recordElement;
+
         datas.forEach(data -> {
-            Element element = root.addElement( recordElement );
+            Element element = root.addElement(finalRecordElement);
             data.keySet().stream().forEach(s -> element.addElement(s).addText(data.get(s).toString()));
         } );
 
