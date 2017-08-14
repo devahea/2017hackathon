@@ -1,15 +1,11 @@
 package org.ahea.api;
 
-import org.ahea.Constant.Constant;
-import org.ahea.build.entity.FieldCategory;
+import lombok.extern.apachecommons.CommonsLog;
+import org.ahea.constant.Constant;
 import org.ahea.build.service.CategoryType;
 import org.ahea.command.Command;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,15 +15,16 @@ import java.util.Map;
  * Created by mio on 2017. 8. 14..
  */
 @RestController
+@CommonsLog
 public class DummyApiController {
+
     @RequestMapping(value = Constant.URI_SEARCH_DUMMY_API)
-    public String search(@Valid List<FieldCategory> fieldCategoryList, Integer dataLength,
-                         @RequestParam(required=false) Map option){
+    public String search(@RequestBody DummyApiRequestVO requestVO){
         Map params = new HashMap();
         Command command = new Command();
-        params.put(Constant.KEY_FIELD_CATEGORY_LIST, fieldCategoryList);
-        params.put(Constant.KEY_DATA_LENGHT, dataLength);
-        params.put(Constant.KEY_OPTION, option);
+        params.put(Constant.KEY_FIELD_CATEGORY_LIST, requestVO.getFieldCategoryList());
+        params.put(Constant.KEY_DATA_LENGHT, requestVO.getDataLength());
+        params.put(Constant.KEY_OPTION, requestVO.getOption());
         return command.input(params);
     }
     @RequestMapping(value = Constant.URI_CATEGORY_TYPE_API)

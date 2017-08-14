@@ -1,6 +1,4 @@
-package org.ahea.Constant;
-
-import java.util.Map;
+package org.ahea.constant;
 
 /**
  * Created by mio on 2017. 8. 14..

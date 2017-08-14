@@ -1,7 +1,7 @@
 package org.ahea.command;
 
 
-import org.ahea.Constant.Constant;
+import org.ahea.constant.Constant;
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.build.entity.ResultData;
 import org.ahea.build.inter.BuildController;
@@ -10,7 +10,6 @@ import org.ahea.export.Exporter;
 import org.ahea.export.ExporterDummyMarshaller;
 import org.ahea.export.ExporterFactory;
 import org.ahea.export.ExporterType;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Map;
