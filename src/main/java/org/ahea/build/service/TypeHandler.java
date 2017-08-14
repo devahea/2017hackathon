@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@CommonsLog
 public class TypeHandler {
 
     public List<List<ResultData>> handle(List<FieldCategory> fieldCategoryList, Integer rowNumber){

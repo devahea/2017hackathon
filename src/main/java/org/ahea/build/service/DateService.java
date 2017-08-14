@@ -8,13 +8,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-@CommonsLog
 public class DateService implements GenerateDataInterface {
     @Override
     public String genetateData(FieldCategory fieldCategory) {
         String format = fieldCategory.getRegularExpression();
         if(format == null){
-//            throw new RuntimeException("Date format have to define");
             format = "yyyy/MM/dd HH:mm:ss";
         }
         Random RANDOM = new SecureRandom();

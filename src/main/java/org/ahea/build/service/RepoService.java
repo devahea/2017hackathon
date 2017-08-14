@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import java.util.Random;
 
 @Service
-@CommonsLog
 public class RepoService implements GenerateDataInterface {
 
     @Autowired
