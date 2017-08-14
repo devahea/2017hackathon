@@ -18,6 +18,12 @@ public class Dom4JXmlExporter implements XmlExporter{
         String rootElement = (String) option.get("rootElement");
         String recordElement = (String) option.get("recordElement");
 
+        if(rootElement==null) {
+            rootElement = "root";
+        }
+        if(recordElement==null) {
+            rootElement = "item";
+        }
 
         Document document = DocumentHelper.createDocument();
         Element root = document.addElement( rootElement );
