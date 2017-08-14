@@ -32,7 +32,7 @@ public class TypeHandler {
                     FilterSelect filterSelect = new FilterSelect();
                     FilterManager filterManager = filterSelect.selectFilter(fieldCategory);
 
-                    if( RandomUtil.isStringDouble(value.toString()) || !fieldCategory.getDataType().equals("string") ){
+                    if( RandomUtil.isStringDouble(value.toString()) || !fieldCategory.getDataType().toLowerCase().equals("string") ){
                         value = Integer.parseInt(value.toString());
                     }
                     if( filterManager.filter(value) ){
