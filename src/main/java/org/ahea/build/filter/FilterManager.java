@@ -15,7 +15,7 @@ public class FilterManager {
         filterChain.addFilter(filter);
     }
 
-    public void filter(String value, List<String> conditionList){
+    public void filter(Object value, List<String> conditionList){
         filterChain.execute(value, conditionList);
     }
 }

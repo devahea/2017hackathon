@@ -31,7 +31,7 @@ public class TypeHandler {
                 genetateDataInterface = DataServiceFactory.dateServiceCreate(fieldCategory);
                 Object value = genetateDataInterface.genetateData(fieldCategory);
 
-                DataFilter filter ;
+//                DataFilter filter ;
 //                if (RandomUtil.isStringDouble(value.toString())
 //                        && !fieldCategory.getDataType().equals("string")) {
 //                    value = Double.parseDouble(value.toString());
@@ -45,18 +45,18 @@ public class TypeHandler {
 //                    }
 //                }
 
-
                 //filter insert
-                FilterManager filterManager = new FilterManager();
-                filterManager.setFilter(new CharacterFilter());
-                filterManager.setFilter(new DateFilter());
-                filterManager.setFilter(new NumberFilter());
-
-                filterManager.filter(value.toString(), fieldCategory.getConditions());
-//                if( filter.filter(value, fieldCategory.getConditions()) ){
-//                    fieldIndex--;
-//                    continue;
-//                }
+//                FilterManager filterManager = new FilterManager();
+//                filterManager.setFilter(new CharacterFilter(o -> o.startsWith("최")));
+//                filterManager.setFilter(new CharacterFilter(o -> o.contains("최")));
+//                filterManager.setFilter(new DateFilter(s -> s.contains("최")));
+//                filterManager.setFilter(new NumberFilter());
+//
+//                filterManager.filter(value, fieldCategory.getConditions());
+////                if( filter.filter(value, fieldCategory.getConditions()) ){
+////                    fieldIndex--;
+////                    continue;
+////                }
 
                 resultData.setName(fieldCategory.getFieldName());
                 resultData.setValue(value);

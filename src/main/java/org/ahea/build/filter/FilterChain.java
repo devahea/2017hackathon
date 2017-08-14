@@ -12,7 +12,7 @@ public class FilterChain {
         filters.add(filter);
     }
 
-    public void execute(String value, List<String> conditions) {
+    public void execute(Object value, List<String> conditions) {
         for (DataFilter filter : filters) {
             filter.filter(value, conditions);   // 필터들을 순차적으로 실행
         }
