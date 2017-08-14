@@ -13,7 +13,9 @@ import java.util.UUID;
 @Entity
 @Data
 public class FieldCategory {
-    @Id
+    @Id @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid",
+            strategy = "uuid")
     String id;
 
     String fieldName;

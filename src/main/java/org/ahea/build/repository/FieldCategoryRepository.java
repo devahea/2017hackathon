@@ -6,5 +6,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.UUID;
 
-public interface FieldCategoryRepository extends JpaRepository<FieldCategory,UUID> {
+public interface FieldCategoryRepository extends JpaRepository<FieldCategory,String> {
 }
