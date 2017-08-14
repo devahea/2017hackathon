@@ -1,6 +1,7 @@
 package org.ahea.export.json;
 
 import com.google.gson.Gson;
+import lombok.extern.slf4j.Slf4j;
 import org.ahea.export.Exporter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +17,7 @@ import java.util.Map;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
+@Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class GsonJsonExporterTest {
@@ -40,6 +42,8 @@ public class GsonJsonExporterTest {
 
         //Then
         assertThat(testResult, is(rightResult));
+
+        log.info("testResult ::: {}", testResult);
     }
 
     @Test
@@ -64,7 +68,7 @@ public class GsonJsonExporterTest {
 
         //then
         assertThat(testResult, is(rightResult));
-
+        log.info("testResult ::: {}", testResult);
     }
 
 }
