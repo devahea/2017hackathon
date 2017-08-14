@@ -44,9 +44,9 @@ public class BuildControllerTest {
         conditions.add("여자");
         conditions.add("남성");
         conditions.add("여성");
-        conditions.add("1");
-        conditions.add("2");
-        conditions.add("3");
+//        conditions.add("1");
+//        conditions.add("2");
+//        conditions.add("3");
         FieldCategory fieldCategory2 = new FieldCategory(
                 "성별",
                 "성별 입니다",
@@ -92,8 +92,8 @@ public class BuildControllerTest {
         );
 
         fieldCategoryList.add(fieldCategory5);
-//        fieldCategoryList.add(fieldCategory2);
-//        fieldCategoryList.add(fieldCategory3);
+        fieldCategoryList.add(fieldCategory2);
+        fieldCategoryList.add(fieldCategory3);
         fieldCategoryList.add(fieldCategory4);
 
         BuildController contorller = new BuildController();
