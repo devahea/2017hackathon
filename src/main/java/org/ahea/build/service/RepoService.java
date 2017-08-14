@@ -24,10 +24,10 @@ public class RepoService implements GenerateDataInterface {
         Integer count = fieldDataRepository.countByFieldCategoryId(fieldCategory.getDataType());
 
         Random random = new Random();
+        int index = random.nextInt(count) + 1;
         FieldData fieldData = fieldDataRepository.findByFieldCategoryIdAndId(
-                fieldCategory.getDataType(), random.nextInt(count)
+                fieldCategory.getDataType(), index
         );
-        log.info("fieldData : " + fieldData);
         return fieldData.getData();
 
     }

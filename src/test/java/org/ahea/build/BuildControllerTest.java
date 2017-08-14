@@ -66,6 +66,7 @@ public class BuildControllerTest {
         );
         List<String> conditions2 = new ArrayList<String>();
         conditions2.add(">,5");
+        conditions2.add("<,9");
 
         FieldCategory fieldCategory4 = new FieldCategory(
                 "숫자",

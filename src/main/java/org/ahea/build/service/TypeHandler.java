@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Slf4j
+@CommonsLog
 public class TypeHandler {
 
     public List<List<ResultData>> handle(List<FieldCategory> fieldCategoryList, Integer rowNumber){
@@ -37,6 +37,7 @@ public class TypeHandler {
                         value = Integer.parseInt(value.toString());
                     }
                     if( filterManager.filter(value) ){
+                        log.info("value : " + value);
                         fieldIndex--;
                         continue;
                     }

@@ -15,13 +15,13 @@ public class FilterSelect {
 
             Filter filter = null;
             if(type.equals(CategoryType.Repo)){
-                filterManager = addRepoFilter(condition);
+                filterManager.setFilter( addRepoFilter(condition) );
             }else if(type.equals(CategoryType.Random)){
-                filterManager = addRandomFilter(condition);
+                filterManager.setFilter( addRandomFilter(condition) );
             }else if(type.equals(CategoryType.Select)){
-                filterManager = addSelectFilter();
+//                filterManager.setFilter( addSelectFilter() );
             }else if(type.equals(CategoryType.Date)){
-                filterManager = addDateFilter();
+//                filterManager.setFilter( addDateFilter() );
             }else {
                 throw new RuntimeException("category type error");
             }
@@ -30,60 +30,57 @@ public class FilterSelect {
         return filterManager;
     }
 
-    private FilterManager addRepoFilter(String condition){
+    private Filter addRepoFilter(String condition){
 
         String sign = condition.split(",")[0];
         String comparison = condition.split(",")[1];
 
-        FilterManager filterManager = new FilterManager();
+        Filter filter = null;
 
         if(sign.equals("first")){
-            filterManager.setFilter(new CharacterFilter(o -> o.startsWith(comparison)));
+            filter = new CharacterFilter(o -> o.startsWith(comparison));
         }else if(sign.equals("middle")){
-            filterManager.setFilter(new CharacterFilter(o -> o.contains(comparison)));
+            filter = new CharacterFilter(o -> o.contains(comparison));
         }else if(sign.equals("last")){
-            filterManager.setFilter(new CharacterFilter(o -> o.endsWith(comparison)));
+            filter = new CharacterFilter(o -> o.endsWith(comparison));
         }else {
             throw new RuntimeException("sign error");
         }
 
-        return filterManager;
+        return filter;
     }
 
-    private FilterManager addRandomFilter(String condition){
+    private Filter addRandomFilter(String condition){
 
         String sign = condition.split(",")[0];
         Integer comparison = Integer.parseInt(condition.split(",")[1]);
 
-        FilterManager filterManager = new FilterManager();
-
+        Filter filter = null;
         if(sign.equals("<")){
-            filterManager.setFilter(new NumberFilter(o -> o < comparison));
+            filter = new NumberFilter(o -> o < comparison);
         }else if(sign.equals("<=")){
-            filterManager.setFilter(new NumberFilter(o -> o <= comparison));
+            filter = new NumberFilter(o -> o < comparison);
         }else if(sign.equals(">")){
-            filterManager.setFilter(new NumberFilter(o -> o > comparison));
+            filter = new NumberFilter(o -> o > comparison);
         }else if(sign.equals(">=")){
-            filterManager.setFilter(new NumberFilter(o -> o >= comparison));
+            filter = new NumberFilter(o -> o >= comparison);
         }else if(sign.equals("==")){
-            filterManager.setFilter(new NumberFilter(o -> o == comparison));
+            filter = new NumberFilter(o -> o == comparison);
         }else if(sign.equals("!=")){
-            filterManager.setFilter(new NumberFilter(o -> o != comparison));
+            filter = new NumberFilter(o -> o != comparison);
         }else {
             throw new RuntimeException("sign error");
         }
 
-        return filterManager;
+        return filter;
     }
 
-    private FilterManager addSelectFilter(){
-        FilterManager filterManager = new FilterManager();
-        return filterManager;
-    }
-
-    private FilterManager addDateFilter(){
-        FilterManager filterManager = new FilterManager();
-        return filterManager;
-    }
+//    private Filter addSelectFilter(){
+//
+//    }
+//
+//    private Filter addDateFilter(){
+//
+//    }
 
 }
