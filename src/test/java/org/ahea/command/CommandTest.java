@@ -1,6 +1,8 @@
 package org.ahea.command;
 
+import lombok.extern.apachecommons.CommonsLog;
 import org.ahea.build.entity.FieldCategory;
+import org.ahea.build.inter.BuildInterface;
 import org.ahea.build.service.CategoryType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,8 +16,7 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+@CommonsLog
 public class CommandTest {
 
 
@@ -27,12 +28,12 @@ public class CommandTest {
         Map frontRequestMap = new HashMap();
 
         List<FieldCategory> fieldCategoryList = new ArrayList<>();
-        fieldCategoryList.add(new FieldCategory("name", "name", null, CategoryType.Repo,"String", null));
+        fieldCategoryList.add(new FieldCategory("name", "name", null, CategoryType.Random,"String", null));
 
         frontRequestMap.put("fieldCategoryList", fieldCategoryList);
         frontRequestMap.put("dataLength", 5);
-
-
+        String result = command.input(frontRequestMap);
+        log.debug(result);
     }
 
     @Test
