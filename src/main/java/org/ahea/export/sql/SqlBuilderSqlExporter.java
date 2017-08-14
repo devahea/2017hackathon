@@ -34,7 +34,8 @@ public class SqlBuilderSqlExporter implements SqlExporter {
             for(String key : data.keySet()){
                 insertQuery.addCustomColumn(key, data.get(key));
             }
-            stringBuilder.append(insertQuery.validate().toString()+";\n");
+            stringBuilder.append(insertQuery.validate().toString());
+            stringBuilder.append(";\n");
         }
         sqls = stringBuilder.toString();
 
