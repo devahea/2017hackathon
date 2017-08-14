@@ -13,9 +13,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@Slf4j
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//@Slf4j
+@CommonsLog
 public class BuildControllerTest {
 
     @Test
@@ -63,19 +64,35 @@ public class BuildControllerTest {
                 "string",
                 null
         );
+        List<String> conditions2 = new ArrayList<String>();
+        conditions2.add(">,5");
 
         FieldCategory fieldCategory4 = new FieldCategory(
-                "이름",
-                "이름 입니다",
-                "[0-9]{2}",
-                CategoryType.Repo,
-                "1",
-                null
+                "숫자",
+                "숫자 입니다",
+                "[0-9]{1}",
+                CategoryType.Random,
+                "",
+                conditions2
         );
 
-        fieldCategoryList.add(fieldCategory1);
-        fieldCategoryList.add(fieldCategory2);
-        fieldCategoryList.add(fieldCategory3);
+        List<String> conditions3 = new ArrayList<String>();
+        conditions3.add("first,김");
+//        conditions3.add("middle,최");
+//        conditions3.add("last,최");
+
+        FieldCategory fieldCategory5 = new FieldCategory(
+                "이름",
+                "이름 입니다",
+                "",
+                CategoryType.Repo,
+                "string",
+                conditions3
+        );
+
+//        fieldCategoryList.add(fieldCategory1);
+//        fieldCategoryList.add(fieldCategory2);
+//        fieldCategoryList.add(fieldCategory3);
 //        fieldCategoryList.add(fieldCategory4);
 
         BuildController contorller = new BuildController();

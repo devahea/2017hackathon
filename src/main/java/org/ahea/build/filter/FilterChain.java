@@ -1,8 +1,11 @@
 package org.ahea.build.filter;
 
+import lombok.extern.apachecommons.CommonsLog;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@CommonsLog
 public class FilterChain {
 
     private List<DataFilter> filters = new ArrayList<DataFilter>();
@@ -13,8 +16,11 @@ public class FilterChain {
     }
 
     public boolean execute(Object value) {
+        log.debug(filters.size());
         for (DataFilter filter : filters) {
+            log.debug("filter null check : " + (filter == null));
             if(!filter.filter(value)) {
+                log.debug("====false====");
                 return false;
             }
         }

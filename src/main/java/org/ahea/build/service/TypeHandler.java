@@ -23,7 +23,6 @@ public class TypeHandler {
             List<ResultData> resultDataes = new ArrayList<>();
 
             for(int fieldIndex = 0 ; fieldIndex < fieldCategoryList.size() ; fieldIndex++){
-//            for (FieldCategory fieldCategory : fieldCategoryList) {
                 FieldCategory fieldCategory = fieldCategoryList.get(fieldIndex);
                 ResultData resultData = new ResultData();
 
@@ -31,13 +30,18 @@ public class TypeHandler {
                 Object value = genetateDataInterface.genetateData(fieldCategory);
 
                 //filter insert
-                FilterManager filterManager = fieldCategory.getFilterManager();
+                FilterSelect filterSelect = new FilterSelect();
+                FilterManager filterManager = filterSelect.selectFilter(fieldCategory);
 
+                if(RandomUtil.isStringDouble(value.toString())){
+                    value = Integer.parseInt(value.toString());
+                }
+                log.debug("value : " + value);
                 if( filterManager.filter(value) ){
                     fieldIndex--;
                     continue;
                 }
-
+                log.debug("end");
                 resultData.setName(fieldCategory.getFieldName());
                 resultData.setValue(value);
 
