@@ -29,18 +29,21 @@ public class TypeHandler {
                 genetateDataInterface = DataServiceFactory.dateServiceCreate(fieldCategory);
                 Object value = genetateDataInterface.genetateData(fieldCategory);
 
-                //filter insert
-                FilterSelect filterSelect = new FilterSelect();
-                FilterManager filterManager = filterSelect.selectFilter(fieldCategory);
+                if(fieldCategory.getConditions() != null){
+                    //filter insert
+                    FilterSelect filterSelect = new FilterSelect();
+                    FilterManager filterManager = filterSelect.selectFilter(fieldCategory);
 
-                if(RandomUtil.isStringDouble(value.toString())){
-                    value = Integer.parseInt(value.toString());
+                    if(RandomUtil.isStringDouble(value.toString())){
+                        value = Integer.parseInt(value.toString());
+                    }
+                    log.debug("value : " + value);
+                    if( filterManager.filter(value) ){
+                        fieldIndex--;
+                        continue;
+                    }
                 }
-                log.debug("value : " + value);
-                if( filterManager.filter(value) ){
-                    fieldIndex--;
-                    continue;
-                }
+
                 log.debug("end");
                 resultData.setName(fieldCategory.getFieldName());
                 resultData.setValue(value);

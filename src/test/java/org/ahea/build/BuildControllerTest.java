@@ -90,7 +90,7 @@ public class BuildControllerTest {
                 conditions3
         );
 
-//        fieldCategoryList.add(fieldCategory1);
+        fieldCategoryList.add(fieldCategory1);
 //        fieldCategoryList.add(fieldCategory2);
 //        fieldCategoryList.add(fieldCategory3);
 //        fieldCategoryList.add(fieldCategory4);
