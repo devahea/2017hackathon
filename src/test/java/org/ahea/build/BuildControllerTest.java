@@ -1,15 +1,21 @@
 package org.ahea.build;
 
 import lombok.extern.apachecommons.CommonsLog;
+import lombok.extern.slf4j.Slf4j;
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.build.inter.BuildController;
 import org.ahea.build.service.CategoryType;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@CommonsLog
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@Slf4j
 public class BuildControllerTest {
 
     @Test
@@ -59,20 +65,20 @@ public class BuildControllerTest {
         );
 
         FieldCategory fieldCategory4 = new FieldCategory(
-                "숫자",
-                "숫자 입니다",
+                "이름",
+                "이름 입니다",
                 "[0-9]{2}",
-                CategoryType.Random,
-                "integer",
+                CategoryType.Repo,
+                "1",
                 null
         );
 
         fieldCategoryList.add(fieldCategory1);
         fieldCategoryList.add(fieldCategory2);
         fieldCategoryList.add(fieldCategory3);
-        fieldCategoryList.add(fieldCategory4);
+//        fieldCategoryList.add(fieldCategory4);
 
         BuildController contorller = new BuildController();
-        log.debug(contorller.build(fieldCategoryList, 100));
+        log.debug(contorller.build(fieldCategoryList, 100) + "");
     }
 }

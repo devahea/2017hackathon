@@ -6,7 +6,6 @@ import org.ahea.build.entity.ResultData;
 import org.ahea.build.filter.*;
 import org.ahea.build.util.RandomUtil;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,32 +30,13 @@ public class TypeHandler {
                 genetateDataInterface = DataServiceFactory.dateServiceCreate(fieldCategory);
                 Object value = genetateDataInterface.genetateData(fieldCategory);
 
-//                DataFilter filter ;
-//                if (RandomUtil.isStringDouble(value.toString())
-//                        && !fieldCategory.getDataType().equals("string")) {
-//                    value = Double.parseDouble(value.toString());
-//                    filter = new NumberFilter();
-//                } else {
-//                    resultData = new ResultData<String>();
-//                    if(genetateDataInterface instanceof DateService){
-//                        filter = new DateFilter();
-//                    }else {
-//                        filter = new CharacterFilter();
-//                    }
-//                }
-
                 //filter insert
-//                FilterManager filterManager = new FilterManager();
-//                filterManager.setFilter(new CharacterFilter(o -> o.startsWith("최")));
-//                filterManager.setFilter(new CharacterFilter(o -> o.contains("최")));
-//                filterManager.setFilter(new DateFilter(s -> s.contains("최")));
-//                filterManager.setFilter(new NumberFilter());
-//
-//                filterManager.filter(value, fieldCategory.getConditions());
-////                if( filter.filter(value, fieldCategory.getConditions()) ){
-////                    fieldIndex--;
-////                    continue;
-////                }
+                FilterManager filterManager = fieldCategory.getFilterManager();
+
+                if( filterManager.filter(value) ){
+                    fieldIndex--;
+                    continue;
+                }
 
                 resultData.setName(fieldCategory.getFieldName());
                 resultData.setValue(value);

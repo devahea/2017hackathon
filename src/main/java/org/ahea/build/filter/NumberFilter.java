@@ -9,7 +9,7 @@ import java.util.List;
 public class NumberFilter implements DataFilter<String>{
 
     @Override
-    public Boolean filter(String value, List<String> conditionList) {
+    public Boolean filter(String valu) {
         log.debug("NumberFilter filter");
 //        int checkIndex = 0;
 //        for(String condition : conditionList){

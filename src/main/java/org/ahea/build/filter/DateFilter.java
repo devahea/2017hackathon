@@ -16,7 +16,7 @@ public class DateFilter implements DataFilter<String> {
     }
 
     @Override
-    public Boolean filter(String value, List<String> conditions) {
+    public Boolean filter(String value) {
         log.debug("DateFilter filter");
 
         return condition.test(value);

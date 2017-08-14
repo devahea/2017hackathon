@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface DataFilter<T> {
 
-    public Boolean filter(T value, List<String> conditions);
+    public Boolean filter(T value);
 
 }

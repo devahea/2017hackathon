@@ -1,6 +1,7 @@
 package org.ahea.build.entity;
 
 import lombok.Data;
+import org.ahea.build.filter.FilterManager;
 import org.ahea.build.service.CategoryType;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -24,6 +25,9 @@ public class FieldCategory {
     String regularExpression;
     CategoryType categoryType;
     String dataType;
+
+    @Transient
+    FilterManager filterManager;
 
     @Transient
     List<String> conditions;

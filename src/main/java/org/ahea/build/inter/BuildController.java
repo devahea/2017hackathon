@@ -14,6 +14,10 @@ public class BuildController implements BuildInterface{
 
         TypeHandler typeHandler = new TypeHandler();
 
+        for(FieldCategory fieldCategory : fieldCategoryList){
+
+        }
+
         return typeHandler.handle(fieldCategoryList, rowNumber);
     }
 }
