@@ -20,4 +20,6 @@ public class DummyApiRequestVO {
     Integer dataLength;
 
     Map option = new HashMap();
+
+    String exportType;
 }

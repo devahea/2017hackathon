@@ -25,6 +25,7 @@ public class DummyApiController {
         params.put(Constant.KEY_FIELD_CATEGORY_LIST, requestVO.getFieldCategoryList());
         params.put(Constant.KEY_DATA_LENGHT, requestVO.getDataLength());
         params.put(Constant.KEY_OPTION, requestVO.getOption());
+        params.put(Constant.KEY_EXPORT_TYPE, requestVO.getOption());
         return command.input(params);
     }
     @RequestMapping(value = Constant.URI_CATEGORY_TYPE_API)

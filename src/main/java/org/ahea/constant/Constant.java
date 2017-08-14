@@ -10,6 +10,7 @@ public class Constant {
     public static final String KEY_FIELD_CATEGORY_LIST= "fieldCategoryList";
     public static final String KEY_DATA_LENGHT = "dataLength";
     public static final String KEY_OPTION = "option";
+    public static final String KEY_EXPORT_TYPE= "exportType";
     public static final String REPO_TYPE_NAME = "1";
     public static final String REPO_TYPE_ADDRESS = "2";
 }
