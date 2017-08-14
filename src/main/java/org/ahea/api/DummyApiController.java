@@ -3,7 +3,9 @@ package org.ahea.api;
 import org.ahea.Constant.Constant;
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.command.Command;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
@@ -17,7 +19,8 @@ import java.util.Map;
 @RestController
 public class DummyApiController {
     @RequestMapping(value = Constant.URI_SEARCH_DUMMY_API)
-    public String search(@Valid List<FieldCategory> fieldCategoryList, Integer dataLength, Map option){
+    public String search(@Valid List<FieldCategory> fieldCategoryList, Integer dataLength,
+                         @RequestParam(required=false) Map option){
         Map params = new HashMap();
         Command command = new Command();
         params.put(Constant.KEY_FIELD_CATEGORY_LIST, fieldCategoryList);
