@@ -19,15 +19,17 @@ public class QFieldCategory extends EntityPathBase<FieldCategory> {
 
     public static final QFieldCategory fieldCategory = new QFieldCategory("fieldCategory");
 
+    public final EnumPath<org.ahea.build.service.CategoryType> categoryType = createEnum("categoryType", org.ahea.build.service.CategoryType.class);
+
+    public final StringPath dataType = createString("dataType");
+
     public final StringPath description = createString("description");
+
+    public final StringPath fieldName = createString("fieldName");
 
     public final StringPath id = createString("id");
 
-    public final StringPath name = createString("name");
-
     public final StringPath regularExpression = createString("regularExpression");
-
-    public final StringPath type = createString("type");
 
     public QFieldCategory(String variable) {
         super(FieldCategory.class, forVariable(variable));

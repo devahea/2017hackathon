@@ -17,11 +17,15 @@ import static org.junit.Assert.*;
 public class DummyApiControllerTest {
     @Test
     public void search() throws Exception {
+
+        DummyApiRequestVO vo = new DummyApiRequestVO();
         List<FieldCategory> fieldCategoryList = new ArrayList<>();
         fieldCategoryList.add(new FieldCategory("name", "name", null, CategoryType.Random,"String", null));
 
         DummyApiController c = new DummyApiController();
-        String result = c.search(fieldCategoryList, 5,null);
+        vo.setDataLength(5);
+        vo.setFieldCategoryList(fieldCategoryList);
+        String result = c.search(vo);
         log.debug(result);
     }
 

@@ -1,9 +1,11 @@
 package org.ahea.command;
 
 import lombok.extern.apachecommons.CommonsLog;
+import org.ahea.BootTest;
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.build.inter.BuildInterface;
 import org.ahea.build.service.CategoryType;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,7 +19,7 @@ import java.util.Map;
 import static org.junit.Assert.*;
 
 @CommonsLog
-public class CommandTest {
+public class CommandTest extends BootTest{
 
 
     Command command = new Command();
@@ -40,13 +42,14 @@ public class CommandTest {
     public void buildDummy() throws Exception {
 
         List<FieldCategory> fieldCategoryList = new ArrayList<>();
-        fieldCategoryList.add(new FieldCategory("name", "name", null, CategoryType.Repo,"String", null));
+        fieldCategoryList.add(new FieldCategory("name", "name", null, CategoryType.Random,"String", null));
 
         command.buildDummy(fieldCategoryList, 5);
 
     }
 
     @Test
+    @Ignore
     public void exportDummy() throws Exception {
         fail("Not yet implemented");
     }

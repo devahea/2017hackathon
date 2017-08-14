@@ -1,6 +1,7 @@
 package org.ahea.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.ahea.BootTest;
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.build.service.CategoryType;
 import org.ahea.build.service.RepoService;
@@ -13,10 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
 @Slf4j
-public class RepoServiceTest {
+public class RepoServiceTest extends BootTest{
 
     @Autowired
     RepoService repoService;

@@ -1,6 +1,7 @@
 package org.ahea.export;
 
 import lombok.extern.slf4j.Slf4j;
+import org.ahea.BootTest;
 import org.ahea.export.json.GsonJsonExporter;
 import org.ahea.export.sql.SqlBuilderSqlExporter;
 import org.ahea.export.xml.Dom4JXmlExporter;
@@ -12,10 +13,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.*;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
 @Slf4j
-public class ExporterTypeTest {
+public class ExporterTypeTest extends BootTest{
 
     @Test
     public void jsonClassCheckTest() {
