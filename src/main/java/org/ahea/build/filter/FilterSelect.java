@@ -82,8 +82,8 @@ public class FilterSelect {
     }
 
     private FilterManager addDateFilter(){
-
-        return null;
+        FilterManager filterManager = new FilterManager();
+        return filterManager;
     }
 
 }
