@@ -33,6 +33,14 @@ public class DummyApiController {
         categoryType.add(CategoryType.Date);
         categoryType.add(CategoryType.Random);
         categoryType.add(CategoryType.Repo);
+        categoryType.add(CategoryType.Select);
         return categoryType.toString();
+    }
+    @RequestMapping(value = Constant.URI_REPO_TYPE_API)
+    public String getRepoType(){
+        List<String> repoType = new ArrayList<>();
+        repoType.add(Constant.REPO_TYPE_NAME);
+        repoType.add(Constant.REPO_TYPE_ADDRESS);
+        return repoType.toString();
     }
 }
