@@ -13,7 +13,7 @@ public class FilterSelect {
         for(String condition : fieldCategory.getConditions()){
             CategoryType type = fieldCategory.getCategoryType();
 
-            DataFilter dataFilter = null;
+            Filter filter = null;
             if(type.equals(CategoryType.Repo)){
                 filterManager = addRepoFilter(condition);
             }else if(type.equals(CategoryType.Random)){
@@ -47,7 +47,7 @@ public class FilterSelect {
             throw new RuntimeException("sign error");
         }
 
-        return null;
+        return filterManager;
     }
 
     private FilterManager addRandomFilter(String condition){

@@ -2,7 +2,7 @@ package org.ahea.build.filter;
 
 import java.util.List;
 
-public interface DataFilter<T> {
+public interface Filter<T> {
 
     public Boolean filter(T value);
 

@@ -2,6 +2,6 @@ package org.ahea.build.service;
 
 import org.ahea.build.entity.FieldCategory;
 
-public interface GenetateDataInterface {
+public interface GenerateDataInterface {
     String genetateData(FieldCategory fieldCategory);
 }

@@ -2,12 +2,10 @@ package org.ahea.build.filter;
 
 import lombok.extern.apachecommons.CommonsLog;
 
-import java.util.Date;
-import java.util.List;
 import java.util.function.Predicate;
 
 @CommonsLog
-public class DateFilter implements DataFilter<String> {
+public class DateFilter implements Filter<String> {
 
     private Predicate<String> condition;
 

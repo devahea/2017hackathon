@@ -13,8 +13,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
+@RunWith(SpringRunner.class)
+@SpringBootTest
 //@Slf4j
 @CommonsLog
 public class BuildControllerTest {
@@ -86,16 +86,16 @@ public class BuildControllerTest {
                 "이름 입니다",
                 "",
                 CategoryType.Repo,
-                "string",
+                "1",
                 conditions3
         );
 
-        fieldCategoryList.add(fieldCategory1);
+        fieldCategoryList.add(fieldCategory5);
 //        fieldCategoryList.add(fieldCategory2);
 //        fieldCategoryList.add(fieldCategory3);
-//        fieldCategoryList.add(fieldCategory4);
+        fieldCategoryList.add(fieldCategory4);
 
         BuildController contorller = new BuildController();
-        log.debug(contorller.build(fieldCategoryList, 100) + "");
+        log.info(contorller.build(fieldCategoryList, 100) + "");
     }
 }

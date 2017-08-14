@@ -19,9 +19,9 @@ public class DataServiceFactory  {
         context = myContext;
     }
 
-    public static GenetateDataInterface dateServiceCreate(FieldCategory fieldCategory){
+    public static GenerateDataInterface dateServiceCreate(FieldCategory fieldCategory){
 
-        GenetateDataInterface result = null;
+        GenerateDataInterface result = null;
 
         try {
 
@@ -29,9 +29,9 @@ public class DataServiceFactory  {
 
             try {
                 Object generateDataInterfaceBeanObject = context.getBean(generateDataInterfaceClaz);
-                result = (GenetateDataInterface) generateDataInterfaceBeanObject;
+                result = (GenerateDataInterface) generateDataInterfaceBeanObject;
             } catch(NoSuchBeanDefinitionException noSuchBeanDefinitionException) {
-                result = (GenetateDataInterface) generateDataInterfaceClaz.newInstance();
+                result = (GenerateDataInterface) generateDataInterfaceClaz.newInstance();
             }
 
             return result;

@@ -2,11 +2,10 @@ package org.ahea.build.filter;
 
 import lombok.extern.apachecommons.CommonsLog;
 
-import java.util.List;
 import java.util.function.Predicate;
 
 @CommonsLog
-public class CharacterFilter implements DataFilter<String> {
+public class CharacterFilter implements Filter<String> {
 
     Predicate<String> condition;
 

@@ -2,12 +2,10 @@ package org.ahea.build.filter;
 
 import lombok.extern.apachecommons.CommonsLog;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Predicate;
 
 @CommonsLog
-public class NumberFilter implements DataFilter<Integer>{
+public class NumberFilter implements Filter<Integer> {
 
     Predicate<Integer> condition;
 

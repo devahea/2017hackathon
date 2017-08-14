@@ -21,7 +21,8 @@ public class FieldCategoryRepositoryTest {
 
     @Test
     public void test(){
-        log.info(fieldDataRepository.findByFieldCategoryIdAndId("1",20).toString());
+        log.info(fieldDataRepository.countByFieldCategoryId("1") + "");
+//        log.info(fieldDataRepository.findByFieldCategoryIdAndId("1",20).toString());
     }
 
 }

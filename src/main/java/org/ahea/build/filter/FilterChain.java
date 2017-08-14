@@ -8,24 +8,21 @@ import java.util.List;
 @CommonsLog
 public class FilterChain {
 
-    private List<DataFilter> filters = new ArrayList<DataFilter>();
+    private List<Filter> filters = new ArrayList<Filter>();
 //    private Target target;
 
-    public void addFilter(DataFilter filter) {
+    public void addFilter(Filter filter) {
         filters.add(filter);
     }
 
     public boolean execute(Object value) {
-        log.debug(filters.size());
-        for (DataFilter filter : filters) {
-            log.debug("filter null check : " + (filter == null));
+        for (Filter filter : filters) {
             if(!filter.filter(value)) {
-                log.debug("====false====");
-                return false;
+                return true;
             }
         }
 
-        return true;
+        return false;
 
     }
 
