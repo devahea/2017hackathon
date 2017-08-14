@@ -4,7 +4,6 @@ import lombok.extern.apachecommons.CommonsLog;
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.build.service.CategoryType;
 
-@CommonsLog
 public class FilterSelect {
 
     public FilterManager selectFilter(FieldCategory fieldCategory){

@@ -5,7 +5,6 @@ import lombok.extern.apachecommons.CommonsLog;
 import java.util.ArrayList;
 import java.util.List;
 
-@CommonsLog
 public class FilterChain {
 
     private List<Filter> filters = new ArrayList<Filter>();

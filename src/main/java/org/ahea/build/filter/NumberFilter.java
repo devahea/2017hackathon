@@ -4,7 +4,7 @@ import lombok.extern.apachecommons.CommonsLog;
 
 import java.util.function.Predicate;
 
-@CommonsLog
+//@CommonsLog
 public class NumberFilter implements Filter<Integer> {
 
     Predicate<Integer> condition;
@@ -17,7 +17,7 @@ public class NumberFilter implements Filter<Integer> {
 
     @Override
     public Boolean filter(Integer value) {
-        log.debug("NumberFilter filter");
+//        log.debug("NumberFilter filter");
         return condition.test(value);
     }
 

@@ -4,7 +4,6 @@ import lombok.extern.apachecommons.CommonsLog;
 
 import java.util.function.Predicate;
 
-@CommonsLog
 public class CharacterFilter implements Filter<String> {
 
     Predicate<String> condition;
@@ -17,7 +16,7 @@ public class CharacterFilter implements Filter<String> {
 
     @Override
     public Boolean filter(String value) {
-        log.debug("CharacterFilter filter");
+//        log.debug("CharacterFilter filter");
 
         return condition.test(value);
 

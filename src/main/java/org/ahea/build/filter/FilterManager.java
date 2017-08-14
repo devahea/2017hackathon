@@ -2,7 +2,6 @@ package org.ahea.build.filter;
 
 import lombok.extern.apachecommons.CommonsLog;
 
-@CommonsLog
 public class FilterManager {
 
     FilterChain filterChain;
@@ -12,7 +11,6 @@ public class FilterManager {
     }
 
     public void setFilter(Filter filter) {
-        log.debug(filter);
         filterChain.addFilter(filter);
     }
 

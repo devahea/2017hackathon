@@ -4,7 +4,7 @@ import lombok.extern.apachecommons.CommonsLog;
 
 import java.util.function.Predicate;
 
-@CommonsLog
+//@CommonsLog
 public class DateFilter implements Filter<String> {
 
     private Predicate<String> condition;
@@ -15,7 +15,7 @@ public class DateFilter implements Filter<String> {
 
     @Override
     public Boolean filter(String value) {
-        log.debug("DateFilter filter");
+//        log.debug("DateFilter filter");
 
         return condition.test(value);
 
