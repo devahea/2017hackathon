@@ -3,10 +3,7 @@ package org.ahea.build.service;
 import lombok.extern.apachecommons.CommonsLog;
 import org.ahea.build.entity.FieldCategory;
 import org.ahea.build.entity.ResultData;
-import org.ahea.build.filter.CharacterFilter;
-import org.ahea.build.filter.DataFilter;
-import org.ahea.build.filter.DateFilter;
-import org.ahea.build.filter.NumberFilter;
+import org.ahea.build.filter.*;
 import org.ahea.build.util.RandomUtil;
 
 import javax.xml.crypto.Data;
@@ -34,21 +31,28 @@ public class TypeHandler {
                 genetateDataInterface = DataServiceFactory.dateServiceCreate(fieldCategory);
                 Object value = genetateDataInterface.genetateData(fieldCategory);
 
-                DataFilter filter;
-                if (RandomUtil.isStringDouble(value.toString())
-                        && !fieldCategory.getDataType().equals("string")) {
-                    value = Double.parseDouble(value.toString());
-                    filter = new NumberFilter();
-                } else {
-                    resultData = new ResultData<String>();
-                    if(genetateDataInterface instanceof DateService){
-                        filter = new DateFilter();
-                    }else {
-                        filter = new CharacterFilter();
-                    }
-                }
+                DataFilter filter ;
+//                if (RandomUtil.isStringDouble(value.toString())
+//                        && !fieldCategory.getDataType().equals("string")) {
+//                    value = Double.parseDouble(value.toString());
+//                    filter = new NumberFilter();
+//                } else {
+//                    resultData = new ResultData<String>();
+//                    if(genetateDataInterface instanceof DateService){
+//                        filter = new DateFilter();
+//                    }else {
+//                        filter = new CharacterFilter();
+//                    }
+//                }
+
 
                 //filter insert
+                FilterManager filterManager = new FilterManager();
+                filterManager.setFilter(new CharacterFilter());
+                filterManager.setFilter(new DateFilter());
+                filterManager.setFilter(new NumberFilter());
+
+                filterManager.filter(value.toString(), fieldCategory.getConditions());
 //                if( filter.filter(value, fieldCategory.getConditions()) ){
 //                    fieldIndex--;
 //                    continue;
