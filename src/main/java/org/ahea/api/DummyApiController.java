@@ -2,6 +2,7 @@ package org.ahea.api;
 
 import org.ahea.Constant.Constant;
 import org.ahea.build.entity.FieldCategory;
+import org.ahea.build.service.CategoryType;
 import org.ahea.command.Command;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,5 +29,13 @@ public class DummyApiController {
         params.put(Constant.KEY_DATA_LENGHT, dataLength);
         params.put(Constant.KEY_OPTION, option);
         return command.input(params);
+    }
+    @RequestMapping(value = Constant.URI_CATEGORY_TYPE_API)
+    public String getCategoryType(){
+        List<Enum> categoryType = new ArrayList<>();
+        categoryType.add(CategoryType.Date);
+        categoryType.add(CategoryType.Random);
+        categoryType.add(CategoryType.Repo);
+        return categoryType.toString();
     }
 }
