@@ -24,7 +24,7 @@ public class RepoService implements GenerateDataInterface {
 
         Random random = new Random();
         int index = random.nextInt(count) + 1;
-        FieldData fieldData = fieldDataRepository.findByFieldCategoryIdAndId(
+        FieldData fieldData = fieldDataRepository.findByFieldCategoryIdAndRowNum(
                 fieldCategory.getDataType(), index
         );
         return fieldData.getData();

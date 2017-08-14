@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Repository
 public interface FieldDataRepository extends JpaRepository<FieldData,Long> {
-    FieldData findByFieldCategoryIdAndId(String fieldCategoryId, long id);
+    FieldData findByFieldCategoryIdAndRowNum(String fieldCategoryId, long rowNum);
 
     Integer countByFieldCategoryId(String fieldCategoryId);
 }

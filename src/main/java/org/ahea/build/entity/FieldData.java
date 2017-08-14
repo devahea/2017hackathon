@@ -13,4 +13,6 @@ public class FieldData {
     String data;
     String fieldCategoryId;
 
+    long rowNum;
+
 }
