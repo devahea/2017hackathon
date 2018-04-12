@@ -36,7 +36,7 @@ public class SqlBuilderSqlExporter implements SqlExporter {
             }
             stringBuilder.append(insertQuery.toString());
             stringBuilder.append(";\n");
-    }
+        }
         sqls = stringBuilder.toString();
 
         return this.removeLastNewLine(sqls);
