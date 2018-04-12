@@ -22,9 +22,23 @@ public class Command {
         Integer dataLength = (Integer) params.get(Constant.KEY_DATA_LENGHT);
         Map option = (Map) params.get(Constant.KEY_OPTION);
 
+        String exportType = (String) params.get("exportType");
+
+        ExporterType exporterTypeObj = null;
+
+        if("Json".equals(exportType)) {
+            exporterTypeObj = ExporterType.Json;
+        }
+        else if("Xml".equals(exportType)) {
+            exporterTypeObj = ExporterType.Xml;
+        }
+        else if("Query".equals(exportType)) {
+            exporterTypeObj = ExporterType.Query;
+        }
+
         List<List<ResultData>> dummyBuildResult = buildDummy(fieldCategoryList, dataLength);
 
-        return exportDummy(ExporterFactory.newInstance(ExporterType.Json), ExporterDummyMarshaller.newInstance().marshalling(dummyBuildResult) , option);
+        return exportDummy(ExporterFactory.newInstance(exporterTypeObj), ExporterDummyMarshaller.newInstance().marshalling(dummyBuildResult) , option);
 
     }
 

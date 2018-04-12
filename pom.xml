@@ -105,8 +105,6 @@
 			<groupId>nl.flotsam</groupId>
 			<artifactId>xeger</artifactId>
 			<version>1.0.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/lib/xeger-1.0.0.jar</systemPath>
 		</dependency>
 
 		<dependency>
@@ -131,7 +129,7 @@
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
-			<version>1.1.7</version>
+			<version>2.1.0</version>
 		</dependency>
 
 	</dependencies>
@@ -141,6 +139,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
 			</plugin>
 
 			<plugin>

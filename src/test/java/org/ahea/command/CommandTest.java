@@ -34,8 +34,8 @@ public class CommandTest extends BootTest{
 
         frontRequestMap.put("fieldCategoryList", fieldCategoryList);
         frontRequestMap.put("dataLength", 5);
-        String result = command.input(frontRequestMap);
-        log.debug(result);
+        //String result = command.input(frontRequestMap);
+        //log.debug(result);
     }
 
     @Test

@@ -80,6 +80,6 @@ public class BuildControllerTest extends BootTest{
         fieldCategoryList.add(fieldCategory4);
 
         BuildController contorller = new BuildController();
-        log.info(contorller.build(fieldCategoryList, 100) + "");
+        //log.info(contorller.build(fieldCategoryList, 100) + "");
     }
 }

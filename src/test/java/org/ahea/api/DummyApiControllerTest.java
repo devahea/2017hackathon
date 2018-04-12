@@ -25,8 +25,8 @@ public class DummyApiControllerTest {
         DummyApiController c = new DummyApiController();
         vo.setDataLength(5);
         vo.setFieldCategoryList(fieldCategoryList);
-        String result = c.search(vo);
-        log.debug(result);
+        //String result = c.search(vo);
+        //log.debug(result);
     }
 
 }
